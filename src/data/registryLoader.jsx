@@ -12,7 +12,7 @@ const LoaderSpinner = () => (
 
 const LoaderBars = () => (
   <div className="bars" aria-label="loading">
-    <span /><span /><span />
+    <span /><span /><span /><span />
   </div>
 )
 

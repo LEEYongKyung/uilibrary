@@ -1,4 +1,5 @@
 import React from "react"
+import scene1Image from "../assets/images/Scene_1.png"
 
 const Placeholder = ({ label = "Demo" }) => (
   <div className="placeholder">
@@ -20,6 +21,29 @@ const CardBasic = () => (
   </div>
 )
 
+const Flip3D = () => (
+  <div class="container_flip3d">
+    <div className="card_flip3d">
+      <div class="card_front_flip3d">
+        <img decoding="async" src={scene1Image} alt="" />
+      </div>
+      <div class="card_back_flip3d">
+        <h3>Card Back</h3>
+        <p>This is back page of card</p>
+        <p>Lorem, ipsum dolor sit met</p>
+      </div>
+
+    </div>
+  </div>
+)
+
+// const OverlayHover = () => (
+//   <div>
+//     <div class=""></div>
+
+//   </div>
+// )
+
 export const registryCard = {
   id: "card",
   label: "Card",
@@ -27,5 +51,7 @@ export const registryCard = {
     { id: "basic", title: "Basic Card", Demo: CardBasic },
     { id: "image", title: "Image Focus", Demo: () => <Placeholder label="Card Variant" /> },
     { id: "compact", title: "Compact", Demo: () => <Placeholder label="Compact" /> },
+    { id: "flip_3d", title: "Flip3D", Demo: Flip3D },
+    { id: "overlay_hover", title: "Overlay Hover", Demo: OverlayHover },
   ],
 }
