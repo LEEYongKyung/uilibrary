@@ -1,0 +1,25 @@
+.card{
+  width: min(440px, 100%);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+}
+
+.card__media{
+  height: 120px;
+  background:
+    radial-gradient(400px 200px at 20% -10%, rgba(103,232,249,.25), transparent 40%),
+    radial-gradient(400px 200px at 120% 120%, rgba(244,114,182,.25), transparent 40%),
+    #0b0f16;
+}
+
+.card__body{
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.card__title{ font-weight: 700; }
+.card__text{ color: var(--muted); }
+.card__actions{ display: flex; gap: 8px; }
