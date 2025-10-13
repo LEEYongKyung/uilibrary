@@ -2,11 +2,13 @@ import React, { useEffect, useMemo, useState } from "react"
 import { Sidebar } from "./components/Sidebar.jsx"
 import { Gallery } from "./components/Gallery.jsx"
 import { registryButton } from "./data/registryButton.jsx"
-import { registryLoader } from "./data/registryLoader.jsx"
 import { registryCard } from "./data/registryCard.jsx"
+import { registryInputForm } from "./data/registryInputForm.jsx"
+import { registryLoader } from "./data/registryLoader.jsx"
+import { registryTextEffect } from "./data/registryTextEffect.jsx"
 
 export default function App() {
-  const items = [registryButton, registryLoader, registryCard]
+  const items = [registryButton, registryCard, registryInputForm, registryLoader, registryTextEffect]
   const [activeId, setActiveId] = useState(() => (location.hash?.slice(1) || items[0]?.id))
 
   // keep URL hash in sync with selection

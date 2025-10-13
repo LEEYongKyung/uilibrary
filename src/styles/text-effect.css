@@ -1,0 +1,66 @@
+.text-effect{
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-size: clamp(24px, 4vw, 34px);
+  display: inline-block;
+  position: relative;
+}
+
+.text-effect--glow{
+  background: linear-gradient(90deg, var(--brand), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 12px rgba(103,232,249,.35),
+    0 0 28px rgba(244,114,182,.25);
+}
+
+.text-effect--neon{
+  color: var(--brand);
+  text-shadow:
+    0 0 6px rgba(103,232,249,.9),
+    0 0 22px rgba(103,232,249,.65),
+    0 0 40px rgba(244,114,182,.45);
+  animation: neonPulse 2.4s ease-in-out infinite;
+}
+
+.text-effect--outline{
+  color: rgba(230,232,239,.2);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,.7);
+}
+
+.text-effect--outline::before,
+.text-effect--outline::after{
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: rgba(103,232,249,.5);
+  -webkit-text-stroke: 0;
+  mix-blend-mode: screen;
+}
+
+.text-effect--outline::before{
+  transform: translate(2px, 2px);
+  color: rgba(244,114,182,.45);
+}
+
+.text-effect--outline::after{
+  transform: translate(-2px, -2px);
+}
+
+@keyframes neonPulse{
+  0%, 100%{
+    text-shadow:
+      0 0 6px rgba(103,232,249,.85),
+      0 0 18px rgba(103,232,249,.65),
+      0 0 32px rgba(244,114,182,.4);
+  }
+  50%{
+    text-shadow:
+      0 0 10px rgba(103,232,249,1),
+      0 0 28px rgba(103,232,249,.9),
+      0 0 48px rgba(244,114,182,.6);
+  }
+}

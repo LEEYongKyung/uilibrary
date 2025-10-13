@@ -1,0 +1,103 @@
+.form-card{
+  width: min(360px, 100%);
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.form-card__field{
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.form-card__field span{
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.form-card__field input,
+.form-card__field textarea{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.05);
+  background: rgba(15,18,24,.65);
+  color: var(--text);
+  font: inherit;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.form-card__field textarea{
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-card__field input:focus,
+.form-card__field textarea:focus{
+  outline: none;
+  border-color: rgba(103,232,249,.45);
+  box-shadow: 0 0 0 3px rgba(103,232,249,.18);
+  background: rgba(15,18,24,.85);
+}
+
+.form-card__submit{
+  width: 100%;
+}
+
+.form-card__inline-row{
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.form-card--inline .form-card__actions{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.form-card__checkbox{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.form-card__checkbox input{
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.form-card--floating .form-card__field{
+  position: relative;
+  gap: 0;
+}
+
+.form-card--floating .form-card__field input{
+  padding: 16px 12px 8px;
+}
+
+.form-card--floating .form-card__field span{
+  position: absolute;
+  left: 12px;
+  top: 16px;
+  pointer-events: none;
+  transition: transform .2s ease, color .2s ease, top .2s ease;
+  letter-spacing: .06em;
+}
+
+.form-card--floating .form-card__field input:focus + span,
+.form-card--floating .form-card__field input:not(:placeholder-shown) + span{
+  top: 6px;
+  transform: scale(.82);
+  color: var(--brand);
+}
