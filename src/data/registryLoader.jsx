@@ -34,7 +34,7 @@ const SkeletonLoader = ()  =>  {
 
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoaded(true), 7000)
+    const timer = setTimeout(() => setIsLoaded(true), 10000)
     return () => clearTimeout(timer)
   }, [])
 
@@ -82,7 +82,7 @@ export const registryLoader = {
     { id: "bars", title: "Bars", Demo: LoaderBars },
     { id: "custom", title: "Custom", Demo: () => <Placeholder label="Your Loader" /> },
     { id: "rotate360", title: "Rotate 360", Demo: LoaderRotate360 },
-    { id: "skeletonloder", title: "Skeleton Loader", Demo: SkeletonLoader },
+    { id: "skeletonLoader", title: "Skeleton Loader", Demo: SkeletonLoader },
 
   ],
 }
